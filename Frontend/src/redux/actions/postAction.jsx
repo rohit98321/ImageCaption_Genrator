@@ -14,7 +14,7 @@ export const asyncPost = (post) => async (dispatch, getstate) => {
 };
 
 export const asyncGetPost = () => async (dispatch, getstate) => {
-  const {data} = await axios.get("https://imagecaption-genrator.onrender.com/auth/posts/list");
+  const {data} = await axios.get("/auth/posts/list");
 
   dispatch(loadpost(data.list))
   
