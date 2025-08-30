@@ -9,7 +9,7 @@ export const asyncUserRegister = (user) =>  async (dispatch, getstate) => {
         
         const res= await axios.post("/auth/register",user,{ withCredentials: true })
         console.log(res);
-            toast.success(res.data)
+            toast.success(res.data.message)
 
         } catch (error) {
             
