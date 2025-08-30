@@ -23,7 +23,12 @@ const bcrypt =require("bcrypt")
 
         const token=jwt.sign({id:user._id},process.env.JWT_SECRET)
 
-        res.cookie("token",token)
+        res.cookie("token",token,{
+            httpOnly: true,
+            secure: true,              // Required for HTTPS (which Render uses)
+            sameSite: "None",          // Required for cross-site cookies
+            maxAge: 7 * 24 * 60 * 60 * 1000 // Optional: 7 days
+        })
 
         res.status(201).json({
             message:"user registered successfully",
