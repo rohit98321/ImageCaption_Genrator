@@ -3,6 +3,7 @@ import Mainroutes from './routes/Mainroutes'
 import Nav from './Nav/Nav'
 import { useDispatch } from 'react-redux'
 import { asyncGetUser } from './redux/actions/userAtion'
+import { asyncGetPost } from './redux/actions/postAction'
 
 const App = () => {
 
@@ -11,6 +12,7 @@ const App = () => {
   useEffect(() => {
     
     dispatch(asyncGetUser())
+    dispatch(asyncGetPost())
   
   }, [])
   

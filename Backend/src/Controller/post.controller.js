@@ -30,6 +30,28 @@ const postController=async (req,res)=>{
     
 }
 
+const listController =async (req,res)=>{
+
+   
+
+    try {
+
+        const list= await postModel.find()
+        res.status(200).json({
+            message:"all data fetched",
+            list
+        })
+        
+    } catch (error) {
+        console.log(error);
+        
+    }
+
+
+
+}
+
 module.exports={
-    postController
+    postController,
+    listController
 }

@@ -1,7 +1,7 @@
 const express =require("express")
 const router=express.Router()
 const authmiddleware=require("../middleware/auth.middleware")
-const {postController}=require("../Controller/post.controller")
+const {postController , listController}=require("../Controller/post.controller")
 const multer =require("multer")
 
 
@@ -13,6 +13,9 @@ router.post("/",
 authmiddleware,//req.user= user data using id cookie
 upload.single("image"),
 postController)
+
+
+router.get("/list" ,listController)
 
 
 
