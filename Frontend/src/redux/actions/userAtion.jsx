@@ -36,7 +36,7 @@ export const asyncUserRegister = (user) =>  async (dispatch, getstate) => {
             
         } catch (error) {
             
-            toast.error(error?.response?.data?.message || "login fail")
+            toast.error(error?.response?.data?.message)
 
         
     }
