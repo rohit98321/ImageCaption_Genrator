@@ -22,6 +22,8 @@ export const asyncUserRegister = (user) =>  async (dispatch, getstate) => {
     
     
     export const asyncUserLogin =(user)=>async(dispatch,getstate)=>{
+
+        console.log("asyncUserLogin");
         
         try {
             
